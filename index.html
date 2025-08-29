@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Waterboat Clone</title>
+
+               <!-- Font Awesome -->
+              <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+              
+              <!-- Bootstrap CSS -->
+              <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+              <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/css/bootstrap-select.min.css">
+
+              <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+              <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Dancing+Script:wght@400..700&family=Jomhuria&family=Londrina+Solid:wght@100;300;400;900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+              <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+            <style>
+                *{
+                  box-sizing: border-box;
+                  margin: 0;
+                  padding: 0;
+                }
+                @media (min-width: 992px) { 
+                  .custom-bg-lg {
+                    background-color: var(--bs-primary) !important;
+                  }
+                }
+                .carousel-indicators .active {
+                  background-color: #0a58ca; /* Darker shade for active (optional) */
+                }
+              
+
+
+
+              </style>
+</head>
+<body>
+
+
+           <div class="container py-3">
+                <div class="row align-items-center text-center text-lg-start">
+
+                    <div class="col-lg-3 col-6 mb-3 mb-lg-0 d-lg-flex align-items-center d-none">
+                    <img src="./images/logo.png.webp" alt="Logo" >
+                    
+                    </div>
+
+                    <div class="col-lg-3 d-none d-lg-flex align-items-center">
+                            <div class="bg-primary rounded-circle p-2 text-white me-2">
+                                <i class="fas fa-location-arrow"></i>
+                            </div>
+                            <div>
+                                <strong>San Francisco</strong>
+                                <div class="text-muted small">Mountain View, Fake st., CA</div>
+                            </div>
+                    </div>
+
+                    <div class="col-lg-3 d-none d-lg-flex align-items-center">
+                            <div class="bg-primary rounded-circle p-2 text-white me-2">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <strong>000 209 392 312</strong>
+                                <div class="text-muted small">Toll Free</div>
+                            </div>
+                    </div>
+
+                    <div class="col-lg-3 d-none d-lg-flex align-items-center">
+                            <div class="bg-primary rounded-circle p-2 text-white me-2">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <strong>info@gmail.com</strong>
+                                <div class="text-muted small">Gournadi, 1230 Bariasl</div>
+                            </div>
+                    </div>
+
+                </div>
+           </div>
+
+        <nav class="navbar navbar-expand-lg custom-bg-lg bg-white position-sticky top-0 z-3">
+                <div class="container">
+
+                    <div class="navbar-brand d-lg-none text-white fw-bold" href="#">
+                            <img src="./images/logo.png.webp" alt="Logo" >
+                    
+                    </div>
+
+                    <button class="navbar-toggler border-0 text-black h5 ms-auto" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu">
+                            <i class="fas fa-bars fs-4"></i>
+                    </button>
+                    
+
+                    <div class="collapse navbar-collapse justify-content-center d-none d-lg-flex">
+                            <ul class="navbar-nav gap-3">
+                                <li class="nav-item"><a class="nav-link text-white fw-bold active" href="#">Home</a></li>
+                                <li class="nav-item"><a class="nav-link text-white fw-bold" href="#">About Us</a></li>
+                                <li class="nav-item"><a class="nav-link text-white fw-bold" href="#">Services</a></li>
+                                <li class="nav-item"><a class="nav-link text-white fw-bold" href="#">Testimonials</a></li>
+                                <li class="nav-item"><a class="nav-link text-white fw-bold" href="#">Blog</a></li>
+                                <li class="nav-item"><a class="nav-link text-white fw-bold" href="#">Contact</a></li>
+                            </ul>
+                    </div>
+
+                </div>
+        </nav>
+
+           <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+                      <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                      </div>
+                      <div class="carousel-inner">
+                                <div class="carousel-item active" style="height: 80%;">
+                                  <img src="./images/hero_1.jpg.webp" class="d-block w-100" alt="...">
+                                  <div class="carousel-caption d-none d-md-block d-sm-block d-lg-block" style="top:50%">
+                                    <h5>Enjoy The Ocean With Your Family</h5>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, in distinctio nostrum laborum sed quisquam voluptate facilis non.</p>
+                                     <button type="button" class="btn btn-primary">Read More</button>
+
+                                  </div>
+                                </div>
+                              <div class="carousel-item" style="height: 80%;">
+                                <img src="./images/hero_2.jpg" class="d-block w-100" alt="...">
+                                <div class="carousel-caption d-none d-md-block d-sm-block d-lg-block text-end" style="top:50%" >
+                                  <h5>Explore, Discover The Ocean</h5>
+                                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, in distinctio nostrum laborum sed quisquam voluptate facilis non.</p>
+                                  <button type="button" class="btn btn-primary">Read More</button>
+
+                                </div>
+                              </div>
+                      
+                      </div>
+
+                      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                      </button>
+                      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                      </button>
+            </div>
+        <div class="container ">
+              <div class="row mt-5 ">
+                   <div class="col-lg-6 col-sm-12">
+                      <img src="./images/hero_2.jpg" alt="" srcset="" style="width: 600px ;height: 300px;" class="w-100">
+                   </div>
+                   <div class="col-lg-6 col-sm-12 mt-4">
+                        <h6 style="font-family: 'Dancing Script', 'sans-serif';" class="text-primary">About Us</h6>
+                        <h6 class="h5 pb-4 mb-4"><span class="border-bottom border-primary pb-4 border-3">Welco</span>me To Our Website</h6>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum, illum, quasi. Odit velit deserunt eligendi unde, enim. Enim fugiat.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum, illum, quasi. Odit velit deserunt eligendi unde, enim. Enim fugiat.</p>
+                        <button type="button" class="btn btn-primary mt-3">Read More</button>
+
+                   </div>
+              
+                
+
+              </div>
+              <div class="row mt-5">
+                 <div class="col-lg-4 col-sm-12 col-md-6 mb-3">
+                        <div class="card border-1" >
+                              <div class="card-body text-center">
+                                
+                                <i class="fa-solid fa-sailboat text-primary h6" style="font-size: 100px;"></i>
+                                <h4 class="h4">Luxuries Yacht</h4>
+                                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus ipsa, ad ratione quos distinctio unde.</p>
+                              </div>
+                         </div>
+                </div>
+                <div class="col-lg-4 col-sm-12 col-md-6 mb-3">
+                        <div class="card border-1" >
+                              <div class="card-body text-center">
+                                
+                                <i class="fa-solid fa-shield-halved text-primary h6" style="font-size: 100px;"></i>
+                                <h4 class="h4">30 Years of Experience</h4>
+                                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus ipsa, ad ratione quos distinctio unde.</p>
+                              </div>
+                         </div>
+                </div>
+                <div class="col-lg-4 col-sm-12 col-md-6">
+                        <div class="card border-1" >
+                              <div class="card-body text-center">
+                                <i class="fa-solid fa-user-nurse text-primary h6" style="font-size: 100px;"></i>
+                                <h4 class="h4">Good Captain</h4>
+                                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus ipsa, ad ratione quos distinctio unde.</p>
+                              </div>
+                         </div>
+                </div>
+              
+              
+             
+              </div>
+        </div>
+        <div class="container-fluid bg-primary mt-5 p-4 mb-5">
+              <div class="container">
+                   <div class="d-flex justify-content-evenly text-white text-center">
+                  <div>
+                    <h4>349</h4>
+                    <p>Number of Yacht</p>
+                  </div>
+                  <div>
+                    <h4>349</h4>
+                    <p>Number of Yacht</p>
+                  </div>
+                  <div>
+                    <h4>349</h4>
+                    <p>Number of Yacht</p>
+                  </div>
+                  <div>
+                    <h4>349</h4>
+                    <p>Number of Yacht</p>
+                  </div>
+                  <div>
+                    <h4>349</h4>
+                    <p>Number of Yacht</p>
+                  </div>
+                 </div>
+            
+              </div>
+        </div>
+        <div class="container">
+             <div class="text-center">
+                <h6 class="text-primary" style="font-family: 'Dancing Script', 'sans-serif';">Destination</h6>
+                <h2>Our Destinations</h2>
+             </div>
+             <div class="row">
+                 <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
+                  <div class="card" >
+                            <img src="./images/hero_1.jpg.webp" class="card-img-top" alt="...">
+                            <div class="card-body p-4">
+                                  <div class="row">
+                                        <i class=" col-3 fa-solid fa-location-dot ms-3 me-3 text-primary"></i>
+                                        <p class="col-8">Croatia — Columbia</p>
+                                  </div>
+                                  <div class="row">
+                                        <i class=" col-2 fa-solid fa-calendar-days ms-3 me-3 text-primary"></i>
+                                        <p class="col-7">Sep. 05 — Oct. 15</p>
+                                        <button class="btn-primary btn col-3">$600</button>
+                                  </div>
+                            </div>
+                          </div>
+                 </div>
+                 <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
+                  <div class="card" >
+                            <img src="./images/hero_1.jpg.webp" class="card-img-top" alt="...">
+                            <div class="card-body p-4">
+                                  <div class="row">
+                                        <i class=" col-3 fa-solid fa-location-dot ms-3 me-3 text-primary"></i>
+                                        <p class="col-8">Croatia — Columbia</p>
+                                  </div>
+                                  <div class="row">
+                                        <i class=" col-2 fa-solid fa-calendar-days ms-3 me-3 text-primary"></i>
+                                        <p class="col-7">Sep. 05 — Oct. 15</p>
+                                        <button class="btn-primary btn col-3">$600</button>
+                                  </div>
+                            </div>
+                          </div>
+                 </div>
+                 <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
+                  <div class="card" >
+                            <img src="./images/hero_1.jpg.webp" class="card-img-top" alt="...">
+                            <div class="card-body p-4">
+                                  <div class="row">
+                                        <i class=" col-3 fa-solid fa-location-dot ms-3 me-3 text-primary"></i>
+                                        <p class="col-8">Croatia — Columbia</p>
+                                  </div>
+                                  <div class="row">
+                                        <i class=" col-2 fa-solid fa-calendar-days ms-3 me-3 text-primary"></i>
+                                        <p class="col-7">Sep. 05 — Oct. 15</p>
+                                        <button class="btn-primary btn col-3">$600</button>
+                                  </div>
+                            </div>
+                          </div>
+                 </div>
+                 <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
+                  <div class="card" >
+                            <img src="./images/hero_1.jpg.webp" class="card-img-top" alt="...">
+                            <div class="card-body p-4">
+                                  <div class="row">
+                                        <i class=" col-3 fa-solid fa-location-dot ms-3 me-3 text-primary"></i>
+                                        <p class="col-8">Croatia — Columbia</p>
+                                  </div>
+                                  <div class="row">
+                                        <i class=" col-2 fa-solid fa-calendar-days ms-3 me-3 text-primary"></i>
+                                        <p class="col-7">Sep. 05 — Oct. 15</p>
+                                        <button class="btn-primary btn col-3">$600</button>
+                                  </div>
+                            </div>
+                          </div>
+                 </div>
+                 <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
+                  <div class="card" >
+                            <img src="./images/hero_1.jpg.webp" class="card-img-top" alt="...">
+                            <div class="card-body p-4">
+                                  <div class="row">
+                                        <i class=" col-3 fa-solid fa-location-dot ms-3 me-3 text-primary"></i>
+                                        <p class="col-8">Croatia — Columbia</p>
+                                  </div>
+                                  <div class="row">
+                                        <i class=" col-2 fa-solid fa-calendar-days ms-3 me-3 text-primary"></i>
+                                        <p class="col-7">Sep. 05 — Oct. 15</p>
+                                        <button class="btn-primary btn col-3">$600</button>
+                                  </div>
+                            </div>
+                          </div>
+                 </div>
+                 <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
+                  <div class="card" >
+                            <img src="./images/hero_1.jpg.webp" class="card-img-top" alt="...">
+                            <div class="card-body p-4">
+                                  <div class="row">
+                                        <i class=" col-3 fa-solid fa-location-dot ms-3 me-3 text-primary"></i>
+                                        <p class="col-8">Croatia — Columbia</p>
+                                  </div>
+                                  <div class="row">
+                                        <i class=" col-2 fa-solid fa-calendar-days ms-3 me-3 text-primary"></i>
+                                        <p class="col-7">Sep. 05 — Oct. 15</p>
+                                        <button class="btn-primary btn col-3">$600</button>
+                                  </div>
+                            </div>
+                          </div>
+                 </div>
+                 <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
+                  <div class="card" >
+                            <img src="./images/hero_1.jpg.webp" class="card-img-top" alt="...">
+                            <div class="card-body p-4">
+                                  <div class="row">
+                                        <i class=" col-3 fa-solid fa-location-dot ms-3 me-3 text-primary"></i>
+                                        <p class="col-8">Croatia — Columbia</p>
+                                  </div>
+                                  <div class="row">
+                                        <i class=" col-2 fa-solid fa-calendar-days ms-3 me-3 text-primary"></i>
+                                        <p class="col-7">Sep. 05 — Oct. 15</p>
+                                        <button class="btn-primary btn col-3">$600</button>
+                                  </div>
+                            </div>
+                          </div>
+                 </div>
+                 <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
+                  <div class="card" >
+                            <img src="./images/hero_1.jpg.webp" class="card-img-top" alt="...">
+                            <div class="card-body p-4">
+                                  <div class="row">
+                                        <i class=" col-3 fa-solid fa-location-dot ms-3 me-3 text-primary"></i>
+                                        <p class="col-8">Croatia — Columbia</p>
+                                  </div>
+                                  <div class="row">
+                                        <i class=" col-2 fa-solid fa-calendar-days ms-3 me-3 text-primary"></i>
+                                        <p class="col-7">Sep. 05 — Oct. 15</p>
+                                        <button class="btn-primary btn col-3">$600</button>
+                                  </div>
+                            </div>
+                          </div>
+                 </div>
+                 <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
+                  <div class="card" >
+                            <img src="./images/hero_1.jpg.webp" class="card-img-top" alt="...">
+                            <div class="card-body p-4">
+                                  <div class="row">
+                                        <i class=" col-3 fa-solid fa-location-dot ms-3 me-3 text-primary"></i>
+                                        <p class="col-8">Croatia — Columbia</p>
+                                  </div>
+                                  <div class="row">
+                                        <i class=" col-2 fa-solid fa-calendar-days ms-3 me-3 text-primary"></i>
+                                        <p class="col-7">Sep. 05 — Oct. 15</p>
+                                        <button class="btn-primary btn col-3">$600</button>
+                                  </div>
+                            </div>
+                          </div>
+                 </div>
+             </div>
+        </div>
+         <div class="container ">
+              <div class="row mt-5 ">
+                   <div class="col-lg-6 col-sm-12">
+                      <img src="./images/hero_1.jpg.webp" alt="" srcset="" style="width: 600px ;height: 300px;" class="w-100">
+                   </div>
+                   <div class="col-lg-6 col-sm-12 mt-4">
+                        <h6 style="font-family: 'Dancing Script', 'sans-serif';" class="text-primary">Book Now</h6>
+                        <h6 class="h5 pb-4 mb-4"><span class="border-bottom border-primary pb-4 border-3">Book</span> A Yacht</h6>
+                          <form class="row g-3">
+                         
+                        <div class="col-md-6">
+                              <label for="fullname" class="form-label">Fill Name</label>
+                              <input type="text" class="form-control" id="fullname">
+                        </div>
+                        <div class="col-md-6">
+                              <label for="lastname" class="form-label">Fill Name</label>
+                              <input type="text" class="form-control" id="lastname">
+                        </div>
+                          <div class="mb-3 col-md-6">
+                              <label for="datefrom" class="form-label " style="cursor: pointer;">Date from:</label>
+                              <input type="text" id="datefrom" class="form-control date" placeholder="Select Date">
+                        </div>
+                          <div class="mb-3 col-md-6">
+                              <label for="dateto" class="form-label" style="cursor: pointer;">Date To:</label>
+                              <input type="text" id="dateto" class="form-control date" placeholder="Select Date">
+                        </div>
+                       <div class="col-md-12">
+                            <label for="inputState" class="form-label">Yacht You're Interested in:</label>
+                             <select id="inputState" class="form-select " >
+                                  <option  selected>Hi-Speed Yacht</option>
+                                  <option>Motor Yacht</option>
+                                  <option>Premium Yacht</option>
+                                  <option>Presidential Yacht</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-6">
+                          <label for="inputEmail4" class="form-label">Email Address</label>
+                          <input type="email" class="form-control" id="inputEmail4">
+                        </div>
+                        <div class="col-md-6">
+                          <label for="inputphonenum" class="form-label">PhoneNumber</label>
+                          <input type="number" class="form-control" id="inputphonenum">
+                        </div>
+                      <div class="mb-3 col-md-12">
+                         <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                      </div>
+                     
+                       
+                     
+                     
+                      
+                        <div class="col-12">
+                          <button type="Book Now" class="btn btn-primary">Sign in</button>
+                        </div>
+                      
+
+
+
+
+                </form>
+                           
+                   </div>
+              
+                
+
+              </div>
+             
+        </div>
+         <div class="container mt-5">
+                      <div class="text-center">
+                        
+                        <h6 class="text-primary" style="font-family: 'Dancing Script', 'sans-serif';">Team</h6>
+                        <h2 class="h5 pb-4 mb-4">O<span class="border-bottom border-primary pb-4 border-3">ur Tea</span>m</h2>
+                        
+                      </div>
+                      <div class="row">
+                                  <div class="col-lg-3 col-md-6 col-sm-12 mb-3">
+                                              <div class="card text-bg-dark">
+                                                  <img src="./images/person_1.jpg.webp" class="card-img" alt="..." >
+                                                   <div class="card-img-overlay">
+                                
+                                                        <div class="d-flex flex-column align-items-start justify-content-end position-absolute bottom-0">
+                                                            <div class=" mb-3   bg-white p-2 rounded-2 text-center" style="width: 40px !important;"><i class="fa-brands fa-facebook-f text-primary"></i></div>
+                                                            <div class=" mb-3   bg-white p-2 rounded-2 text-center" style="width: 40px !important;"><i class="fa-brands fa-twitter text-primary"></i></div>
+                                                            <div class=" mb-3   bg-white p-2 rounded-2 text-center" style="width: 40px !important;"><i class="fa-brands fa-linkedin-in text-primary"></i></div>
+                                                        </div>
+                                                  </div>
+                                          </div>
+                                  </div>
+                                  <div class="col-lg-3 col-md-6 col-sm-12 mb-3">
+                                              <div class="card text-bg-dark">
+                                                  <img src="./images/person_2.jpg.webp" class="card-img" alt="..." >
+                                                   <div class="card-img-overlay">
+                                
+                                                        <div class="d-flex flex-column align-items-start justify-content-end position-absolute bottom-0">
+                                                            <div class=" mb-3   bg-white p-2 rounded-2 text-center" style="width: 40px !important;"><i class="fa-brands fa-facebook-f text-primary"></i></div>
+                                                            <div class=" mb-3   bg-white p-2 rounded-2 text-center" style="width: 40px !important;"><i class="fa-brands fa-twitter text-primary"></i></div>
+                                                            <div class=" mb-3   bg-white p-2 rounded-2 text-center" style="width: 40px !important;"><i class="fa-brands fa-linkedin-in text-primary"></i></div>
+                                                        </div>
+                                                  </div>
+                                          </div>
+                                  </div>
+                                  <div class="col-lg-3 col-md-6 col-sm-12 mb-3">
+                                              <div class="card text-bg-dark">
+                                                  <img src="./images/person_3.jpg.webp" class="card-img" alt="..." >
+                                                   <div class="card-img-overlay">
+                                
+                                                        <div class="d-flex flex-column align-items-start justify-content-end position-absolute bottom-0">
+                                                            <div class=" mb-3   bg-white p-2 rounded-2 text-center" style="width: 40px !important;"><i class="fa-brands fa-facebook-f text-primary"></i></div>
+                                                            <div class=" mb-3   bg-white p-2 rounded-2 text-center" style="width: 40px !important;"><i class="fa-brands fa-twitter text-primary"></i></div>
+                                                            <div class=" mb-3   bg-white p-2 rounded-2 text-center" style="width: 40px !important;"><i class="fa-brands fa-linkedin-in text-primary"></i></div>
+                                                        </div>
+                                                  </div>
+                                          </div>
+                                  </div>
+                                  <div class="col-lg-3 col-md-6 col-sm-12 mb-3">
+                                              <div class="card text-bg-dark">
+                                                  <img src="./images/person_4.jpg.webp" class="card-img" alt="..." >
+                                                   <div class="card-img-overlay">
+                                
+                                                        <div class="d-flex flex-column align-items-start justify-content-end position-absolute bottom-0">
+                                                            <div class=" mb-3   bg-white p-2 rounded-2 text-center" style="width: 40px !important;"><i class="fa-brands fa-facebook-f text-primary"></i></div>
+                                                            <div class=" mb-3   bg-white p-2 rounded-2 text-center" style="width: 40px !important;"><i class="fa-brands fa-twitter text-primary"></i></div>
+                                                            <div class=" mb-3   bg-white p-2 rounded-2 text-center" style="width: 40px !important;"><i class="fa-brands fa-linkedin-in text-primary"></i></div>
+                                                        </div>
+                                                  </div>
+                                          </div>
+                                  </div>
+                    
+                      </div>
+        </div>
+         <div class="container mt-5 mb-5">
+                      <div class="text-center">
+                        
+                        <h6 class="text-primary" style="font-family: 'Dancing Script', 'sans-serif';">Testimonial</h6>
+                        <h2 class="h5 pb-4 mb-4">What Cus<span class="border-bottom border-primary pb-4 border-3">tomer</span>Saying...</h2>
+                        
+                      </div>
+                      <div class="row mt-4">
+                                  <div class="row col-lg-4 col-sm-12 col-md-6  me-lg-2 col-md-12 mb-md-3">
+                                        <div class=" card mb-3">
+                                            <div class=" card-body">
+                                              <p class="w-75"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem laborum cumque commodi, unde doloribus</p> 
+                                            </div>
+                                            
+
+                                        </div>
+                                        <div class="col-2">
+                                              <img src="./images/person_3_sq.jpg.webp" alt="" class="rounded-circle w-100">
+                                        </div>
+                                        <div class="col-8">
+                                          <h6>John Doe</h6>
+                                          <p>CEO and Co-Founder</p>
+                                        </div>
+
+                                        
+                                  </div>
+                                  <div class="row col-lg-4 col-sm-12 col-md-6  me-lg-2 col-md-12 mb-md-3">
+                                        <div class=" card mb-3">
+                                            <div class=" card-body">
+                                              <p class="w-75"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem laborum cumque commodi, unde doloribus</p> 
+                                            </div>
+                                            
+
+                                        </div>
+                                        <div class="col-2">
+                                              <img src="./images/person_3_sq.jpg.webp" alt="" class="rounded-circle w-100">
+                                        </div>
+                                        <div class="col-8">
+                                          <h6>John Doe</h6>
+                                          <p>CEO and Co-Founder</p>
+                                        </div>
+
+                                        
+                                  </div>
+                                  <div class="row col-lg-4 col-sm-12 col-md-6  me-lg-2 col-md-12 mb-md-3">
+                                        <div class=" card mb-3">
+                                            <div class=" card-body">
+                                              <p class="w-75"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem laborum cumque commodi, unde doloribus</p> 
+                                            </div>
+                                            
+
+                                        </div>
+                                        <div class="col-2">
+                                              <img src="./images/person_3_sq.jpg.webp" alt="" class="rounded-circle w-100">
+                                        </div>
+                                        <div class="col-8">
+                                          <h6>John Doe</h6>
+                                          <p>CEO and Co-Founder</p>
+                                        </div>
+
+                                        
+                                  </div>
+                                 
+                            
+                    
+                      </div>
+        </div>
+        <div class="container-fluid bg-light">
+              <div class="container">
+                      <div class="row">
+                            <div class="col-lg-3 p-3 text-center col-md-12 col-sm-12">
+                              <div class="mt-5">
+                                <img src="./images/logo.png.webp" alt="" >
+                                <p class="mt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae nemo minima qui dolor, iusto iure.</p>
+                                <a class="text-decoration-none text-primary" href="">Learn More</a>
+                              </div>
+                            </div>
+                            <div class="col-lg-3 p-3 text-center col-md-12 col-sm-12">
+                              <div class="mt-5">
+                                   <h2 class="h5 mb-5 "><span class="border-bottom border-primary pb-2 border-2 ">Our Company</span></h2>
+                                   <a class="text-decoration-none text-primary d-block mb-2" href="">About</a>
+                                   <a class="text-decoration-none text-primary d-block mb-2" href="">News</a>
+                                   <a class="text-decoration-none text-primary d-block mb-2" href="">Services</a>
+                                   <a class="text-decoration-none text-primary d-block mb-2" href="">Our Team</a>
+                                   <a class="text-decoration-none text-primary d-block mb-2" href="">Careers</a>
+                                   <a class="text-decoration-none text-primary d-block mb-2" href="">Projects</a>
+
+
+                              </div>
+                            </div>
+                            <div class="col-lg-3 p-3 text-center col-md-12 col-sm-12">
+
+                              <div class="mt-5">
+                                   <h2 class="h5 mb-5 "><span class="border-bottom border-primary pb-2 border-2 ">Our Services</span></h2>
+                                   <a class="text-decoration-none text-primary d-block mb-2" href="">Industrial</a>
+                                   <a class="text-decoration-none text-primary d-block mb-2" href="">Construction</a>
+                                   <a class="text-decoration-none text-primary d-block mb-2" href="">Remodeling</a>
+                               
+                              </div>
+                            </div>
+                            <div class="col-lg-3 p-3 text-center col-md-12 col-sm-12">
+                              <div class="mt-5">
+    
+                                   <h2 class="h5 mb-5 "><span class="border-bottom border-primary pb-2 border-2 ">Contact</span></h2>
+                                   <a class="text-decoration-none text-primary d-block mb-2" href="">Help Center</a>
+                                   <a class="text-decoration-none text-primary d-block mb-2" href="">Support Community</a>
+                                   <a class="text-decoration-none text-primary d-block mb-2" href="">Press</a>
+                                   <a class="text-decoration-none text-primary d-block mb-2" href="">FAQ</a>
+                                   <a class="text-decoration-none text-primary d-block mb-2" href="">Our Partners</a>
+
+
+                              </div>
+                            </div>
+                      </div>
+              </div>
+        </div>
+        
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+      <script>
+            document.addEventListener('DOMContentLoaded', function () {
+              flatpickr(".date", {
+                dateFormat: "d/m/Y"
+              });
+              document.querySelector('select').addEventListener('onblur',function(){
+                console.log(  document.querySelector('option'))
+                document.querySelector('option').style.backgroundColor="blue"
+              })
+            });
+           
+          
+           
+      </script>
+</body>
+</html>
